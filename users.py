@@ -5,11 +5,11 @@ from databases import Database
 class User:
     def __init__(self):
         self.name = input("Enter your name: ")
-        self.age = int(input("Enter your age: "))
-        self.weight = float(input("Enter your weight: "))
+        self.password = int(input("Enter your password: "))
+        self.email = input("Enter your email: ")
 
     def __str__(self):
-        return f"Name: {self.name}, Age: {self.age}, Weight: {self.weight}"
+        return f"Name: {self.name}, Password: {self.password}, Email: {self.email}"
 
 # Create a database object
 db = Database()
@@ -19,7 +19,7 @@ user = User()
 print(user)
 
 # Insert user into the database
-db.insert_user(user.name, user.age, user.weight)
+db.insert_user(user.name, user.password, user.email)
 
 # Retrieve and display all users from the database
 db.get_all_users()

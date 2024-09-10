@@ -16,15 +16,15 @@ class Database:
             CREATE TABLE IF NOT EXISTS users (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 name VARCHAR(255),
-                age INT,
-                weight FLOAT
+                password INT,
+                email VARCHAR(255)
             )
         """)
         print("Table created (if not exists).")
 
-    def insert_user(self, name, age, weight):
-        sql = "INSERT INTO users (name, age, weight) VALUES (%s, %s, %s)"
-        val = (name, age, weight)
+    def insert_user(self, name, password, email):
+        sql = "INSERT INTO users (name, password, email) VALUES (%s, %s, %s)"
+        val = (name, password, email)
         self.mycursor.execute(sql, val)
         self.mydb.commit()
         print(f"{self.mycursor.rowcount} record inserted.")

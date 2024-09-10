@@ -10,6 +10,6 @@ USE user_data;
 CREATE TABLE users (
                        id INT AUTO_INCREMENT PRIMARY KEY,
                        name VARCHAR(100),
-                       age INT,
-                       weight FLOAT
+                       password INT,
+                       email VARCHAR(100)
 );
